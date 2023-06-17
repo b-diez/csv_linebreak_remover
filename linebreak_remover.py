@@ -118,6 +118,7 @@ def main(_args):
             return 3
 
     # Catch generic exceptions
+    # TODO: Branch into more specific exceptions
     except Exception as ex:
         logging.error(ex)
         return 4
