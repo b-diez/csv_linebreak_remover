@@ -79,7 +79,7 @@ def main(_args):
                     line_out = ''
                     for line in file_in:
                         # Append current line to out buffer
-                        line_out = line_out + line.replace('\n','')
+                        line_out = line_out + line.replace('\n',' ')
                         if is_line_closed:
                             # If the previous line was closed, a broken line keeps the output buffer
                             # and sets the status of open line
