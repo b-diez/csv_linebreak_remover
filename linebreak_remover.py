@@ -85,16 +85,17 @@ def main(_args):
                             # and sets the status of open line
                             if is_line_broken(line):
                                 is_line_closed = False
-                            # Otherwise, writes the line and cleans the output buffer
+                            # Otherwise, writes the line, minus the last space from replacing the
+                            # last line break and cleans the output buffer
                             else:
-                                file_out.write(f'{line_out}\n')
+                                file_out.write(f'{line_out[:-1]}\n')
                                 line_out = ''
                         else:
                             # If the previous line was open, a broken line means that the quote is
                             # closed in this line. Writes the line, cleans the output buffer and
                             # sets the status of closed line
                             if is_line_broken(line):
-                                file_out.write(f'{line_out}\n')
+                                file_out.write(f'{line_out[:-1]}\n')
                                 is_line_closed = True
                                 line_out = ''
                             # Otherwise, the quote is still open, so it continues with the next line
